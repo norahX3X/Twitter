@@ -1,25 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../models/user').User;
-
-// const Smoothie = require('../models/smoothie');
+const User = require('../models/user');
 
 router.get('/', (req, res) => {
-
+  
   User.find()
     .then((users) => {
-      res.sand( {
-        users : "users",
-
-      }
-      )
+      res.send({users})
     }).catch(err => console.log(err))
-
-})
-
-//NEW
-router.get('/new', (req, res) => {
-  res.render('new')
 })
 
 //POST
@@ -29,14 +17,13 @@ router.post('/', (req, res) => {
     username: req.body.username,
     email: req.body.email,
     name : req.body.name, 
-    telephone : req.body.telephone,
+    //telephone : req.body.telephone,
   }
-
-  
 
   let user = new User(data)
   user.save()
     .then(() => {
+      res.send({message : "added!", user})
     //   res.redirect('/fsers')
     }).catch(err => console.log(err))
 

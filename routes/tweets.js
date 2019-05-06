@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   
     let data = {
       body: req.body.body, 
-      by_user: req.body.user
+      by_user: req.body.by_user
     }
     let tweet = new Tweet(data)
     tweet.save()
