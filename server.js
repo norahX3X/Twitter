@@ -32,5 +32,7 @@ app.use(express.static('public'));
 // app.use(methodOverride('_method'));
 //use routs 
 app.use('/tweets', tweetRouts);
+app.use('/users', usearsRoutes);
+
 //listen to port
 app.listen(PORT, () => console.log(`active on ${PORT}`))
