@@ -4,7 +4,7 @@ const app = express();
 //get port 
 const PORT = process.env.PORT;
 
-const methodOverride = require('method-override')
+//const methodOverride = require('method-override')
 const mongoose= require('mongoose')
 
 const ejs = require('ejs');
@@ -29,7 +29,7 @@ mongoose.set('useCreateIndex', true);
 //true for embaded ojects in schema/db 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
-app.use(methodOverride('_method'));
+// app.use(methodOverride('_method'));
 //use routs 
 app.use('/tweets', tweetRouts);
 //listen to port
