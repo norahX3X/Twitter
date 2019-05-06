@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
   
     Tweet.find()
     .then((tweets)=>{
-      res.render('index', { tweets })
+        res.send({ tweets })
+      //res.render('index', { tweets })
     }).catch(err => console.log(err))
   
   })

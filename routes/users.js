@@ -8,9 +8,11 @@ router.get('/', (req, res) => {
 
   User.find()
     .then((users) => {
-      res.render('index', {
-        users
-      })
+      res.sand( {
+        users : "users",
+
+      }
+      )
     }).catch(err => console.log(err))
 
 })
@@ -24,8 +26,10 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
 
   let data = {
-    name: req.body.name,
-    color: req.body.color
+    username: req.body.username,
+    email: req.body.email,
+    name : req.body.name, 
+    telephone : req.body.telephone,
   }
 
   
@@ -33,7 +37,7 @@ router.post('/', (req, res) => {
   let user = new User(data)
   user.save()
     .then(() => {
-      res.redirect('/fsers')
+    //   res.redirect('/fsers')
     }).catch(err => console.log(err))
 
 

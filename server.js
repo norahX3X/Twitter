@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config()
 const app = express();
 //get port 
-const PORT = process.env.PORT;
+const PORT =3003;
 
 //const methodOverride = require('method-override')
 const mongoose= require('mongoose')
@@ -32,5 +32,7 @@ app.use(express.static('public'));
 // app.use(methodOverride('_method'));
 //use routs 
 app.use('/tweets', tweetRouts);
+app.use('/users', usearsRoutes);
+
 //listen to port
 app.listen(PORT, () => console.log(`active on ${PORT}`))
