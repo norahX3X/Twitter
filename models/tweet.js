@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+// const userSchema  =require('./user').userSchema;
 
 const tweetSchema = new Schema({
     body: { type: String, required: true , maxlength: 180 },
