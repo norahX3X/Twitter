@@ -11,6 +11,9 @@ const userSchema = new Schema({
     name: String,
     email: String,
     telephone: Number,
+    fallowing :[{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] , 
+    followers :[{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] ,
+    favorist : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tweet' }] ,
     tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tweet' }]//[tweetsSchema]
 }, {
     timestamps: true
